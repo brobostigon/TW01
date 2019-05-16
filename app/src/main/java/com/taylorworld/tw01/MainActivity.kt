@@ -10,15 +10,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        // setSupportActionBar(findViewById(R.id.my_toolbar))
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Charecter Stats saved!!", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-            }
+        //setSupportActionBar(findViewById(R.id.my_toolbar))
 
+        fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
         }
     }
 
