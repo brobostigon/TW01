@@ -9,18 +9,14 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
+        {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         // setSupportActionBar(findViewById(R.id.my_toolbar))
-
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Charecter Stats saved!!", Snackbar.LENGTH_LONG)
-                //.setAction("Action", null).show()
-            // @Override
-            public void onClick(){
-                fun getStats()
+                .setAction("Action", null).show()
             }
 
         }
