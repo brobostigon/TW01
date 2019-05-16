@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 
 @Entity (tableName = "stat_table")
 data class Stats (
-    @PrimaryKey(name = "charecter") val charecter: String,
+    @PrimaryKey @ColumnInfo(name = "charecter") val charecter: String,
     @ColumnInfo(name = "str") val str: String,
     @ColumnInfo(name = "dex") val dex: String,
     @ColumnInfo(name = "int") val int: String,
@@ -26,4 +26,27 @@ interface StatDao {
     suspend fun insert(stat: Stats)
 
     //@Abstract val statDao: StatDao{}
+}
+
+@Database(
+    entities = [(Stats::class)],
+    version = 1,
+    exportSchema = false
+)
+abstract class DDDatabase : RoomDatabase() {
+
+    abstract fun statDao(): StatDao
+
+    private var inst: DDDatabase? = null
+    private val instLock = Object()
+
+    fun getInstance(context: Context): DDDatabase = inst ?: synchronized(instLock) {
+        return inst ?: run {
+            inst = Room.databaseBuilder(
+                context,
+                DDDatabase::class.java, "CharecterStats"
+            ).build()
+            inst!!
+        }
+    }
 }
