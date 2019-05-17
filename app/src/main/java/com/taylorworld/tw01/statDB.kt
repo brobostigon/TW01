@@ -1,11 +1,10 @@
 package com.taylorworld.tw01
 
 @Database(entities = [(Stats::class)], version = 1, exportSchema = false
-//)
-abstract class StatsDatabase : RoomDatabase() {
+)
+abstract class DDDatabase : RoomDatabase() {
     abstract fun statDao(): StatDao
     }
-)
 
 //abstract class DDDatabase : RoomDatabase() {
 
