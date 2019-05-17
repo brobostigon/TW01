@@ -8,18 +8,21 @@ import androidx.room.PrimaryKey
 
 @Entity (tableName = "stat_table")
 data class Stats (
-    @PrimaryKey @ColumnInfo(name = "charecter") val charecter: String,
-    @ColumnInfo(name = "str") val str: String,
-    @ColumnInfo(name = "dex") val dex: String,
-    @ColumnInfo(name = "int") val int: String,
-    @ColumnInfo(name = "wis") val wis: String,
-    @ColumnInfo(name = "con") val con: String,
-    @ColumnInfo(name = "cha") val cha: String
+    @PrimaryKey @ColumnInfo(name = "charecter") var charecter: String,
+    @ColumnInfo(name = "str") var str: Int,
+    @ColumnInfo(name = "dex") var dex: Int,
+    @ColumnInfo(name = "int") var int: Int,
+    @ColumnInfo(name = "wis") var wis: Int,
+    @ColumnInfo(name = "con") var con: Int,
+    @ColumnInfo(name = "cha") var cha: Int
 )
+{
+    constructor() : this("", 0, 0, 0, 0, 0, 0)
+}
 
 @Dao
 interface StatDao {
-    @Query("SELECT charecter, str, dex, int, wis, con, cha from stat_table")
+    @Query("SELECT * from stat_table")
     fun getStats(): LiveData<List<Stats>>
 
     @Insert
