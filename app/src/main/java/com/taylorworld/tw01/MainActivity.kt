@@ -1,12 +1,16 @@
 package com.taylorworld.tw01
 
+//import android.content.Context
+import android.content.Context
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +23,6 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
     }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -35,28 +38,30 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-}
-class Test : View.OnClickListener {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState);
+    var str = editText2.text.toString()
+    var dex = editText.text.toString()
+    var int = editText4.text.toString()
+    var wis = editText3.text.toString()
+    var con = editText6.text.toString()
+    var cha = editText5.text.toString()
+    var chrname = editText7.text.toString()
 
-        // rest of the code
+    val sharedPref = activity?.getPreferences(context.MODE_PRIVATE)
 
-        button.setOnClikListener(this)
-    }
+    public fun saveStr(view: View) {
 
-    override fun onClick(v: View?) {
-        var str = editText2.text.toString()
-        var dex = editText.text.toString()
-        var int = editText4.text.toString()
-
-        when (v.id) {
-            R.id.button -> {
-                //add write sharedPreferences
-            }
+        val sharedPref = activity?.setPreferences(Context.MODE_PRIVATE) ?: return
+        with (sharedPref.edit()) {
+            putInt(getString(str), STR)
+            commit()
         }
     }
+
+    public fun read(view: View) {
+
+    }
 }
+
 
 
