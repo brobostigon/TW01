@@ -1,6 +1,5 @@
 package com.taylorworld.tw01
 
-//import android.content.Context
 import android.content.Context
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -12,7 +11,7 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,26 +38,32 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    var str = editText2.text.toString()
-    var dex = editText.text.toString()
-    var int = editText4.text.toString()
-    var wis = editText3.text.toString()
-    var con = editText6.text.toString()
-    var cha = editText5.text.toString()
+    var strength = editText2.text.toString()
+    var dexterity = editText.text.toString()
+    var intelligance = editText4.text.toString()
+    var wisdom = editText3.text.toString()
+    var constitution = editText6.text.toString()
+    var charisma = editText5.text.toString()
     var chrname = editText7.text.toString()
 
-    val sharedPref = activity?.getPreferences(context.MODE_PRIVATE)
+    val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
 
-    public fun saveStr(view: View) {
+     public fun saveStr(view: View) {
 
-        val sharedPref = activity?.setPreferences(Context.MODE_PRIVATE) ?: return
-        with (sharedPref.edit()) {
-            putInt(getString(str), STR)
+        val sharedPref = activity?.setPreferences(Context.MODE_PRIVATE) ?: return with (sharedPref.edit()) {
+            putInt(getString(STR), strength)
+            commit()
+        }
+    }
+    public fun saveDex(view: View) {
+
+        val sharedPref = activity?.setPreferences(Context.MODE_PRIVATE) ?: return with (sharedPref.edit()) {
+            putInt(getString(DEX), dexterity)
             commit()
         }
     }
 
-    public fun read(view: View) {
+    public fun readStr(view: View) {
 
     }
 }
