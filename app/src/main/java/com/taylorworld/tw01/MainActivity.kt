@@ -35,4 +35,30 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    class Test : View.OnClickListener {
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            // rest of the code
+
+            button.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            var str = editText2.text.toString()
+            var dex = editText.text.toString()
+            var int = editText4.text.toString()
+
+            when (v.id) {
+                R.id.button -> {
+                    //add write sharedPreferences
+                }
+            }
+        }
+    }
 }
+
+
