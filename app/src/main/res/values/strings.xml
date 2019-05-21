@@ -8,4 +8,6 @@
     <string name="con">CON</string>
     <string name="cha">CHA</string>
     <string name="chr_name">Charecter Name</string>
+    <string name="STR">STR</string>
+    <string name="DEX">DEx</string>
 </resources>

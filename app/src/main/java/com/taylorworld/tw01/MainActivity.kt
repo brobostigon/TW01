@@ -1,5 +1,6 @@
 package com.taylorworld.tw01
 
+import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -22,6 +23,7 @@ class MainActivity() : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
     }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -38,35 +40,37 @@ class MainActivity() : AppCompatActivity() {
         }
     }
 
-    var strength = editText2.text.toString()
-    var dexterity = editText.text.toString()
-    var intelligance = editText4.text.toString()
-    var wisdom = editText3.text.toString()
-    var constitution = editText6.text.toString()
-    var charisma = editText5.text.toString()
-    var chrname = editText7.text.toString()
+        var strength = Integer.parseInt(editText2.text.toString())
+        var dexterity = Integer.parseInt(editText.text.toString())
+        var intelligance = Integer.parseInt(editText4.text.toString())
+        var wisdom = Integer.parseInt(editText3.text.toString())
+        var constitution = Integer.parseInt(editText6.text.toString())
+        var charisma = Integer.parseInt(editText5.text.toString())
+        var chrname = editText7.text.toString()
 
-    val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+    val sharedPref = this?.getPreferences(Context.MODE_PRIVATE)
 
-     public fun saveStr(view: View) {
+    public fun saveStr(view: View) {
 
-        val sharedPref = activity?.setPreferences(Context.MODE_PRIVATE) ?: return with (sharedPref.edit()) {
-            putInt(getString(STR), strength)
-            commit()
+        // this should be getPreferences
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with (sharedPref.edit()) {
+            putInt(getString(R.string.STR), strength)
+            apply()
         }
     }
     public fun saveDex(view: View) {
 
-        val sharedPref = activity?.setPreferences(Context.MODE_PRIVATE) ?: return with (sharedPref.edit()) {
-            putInt(getString(DEX), dexterity)
-            commit()
+        // this should be getPreferences
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with (sharedPref.edit()) {
+            putInt(getString(R.string.DEX), dexterity)
+            apply()
         }
     }
 
-    public fun readStr(view: View) {
+        public fun readStr(view: View) {
 
+        }
     }
-}
 
 
 
