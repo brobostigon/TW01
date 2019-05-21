@@ -15,4 +15,5 @@
     <string name="CHA">CHA</string>
     <string name="CON">CON</string>
     <string name="CHR">CHR</string>
+    <string name="sharedPref">sharedPref</string>
 </resources>

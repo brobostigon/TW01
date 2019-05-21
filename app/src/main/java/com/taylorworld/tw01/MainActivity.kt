@@ -48,12 +48,13 @@ class MainActivity() : AppCompatActivity() {
     //var charisma = Integer.parseInt(editText5.text.toString())
     //var chrname = editText7.text.toString()
 
-    val sharedPref = this?.getPreferences(Context.MODE_PRIVATE)
+    //val sharedPref = this?.getPreferences(Context.MODE_PRIVATE)
 
     public fun saveStr(view: View) {
         var strength = Integer.parseInt(editText2.text.toString())
         // this should be getPreferences
-        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with(sharedPref.edit()) {
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE);
+        with(sharedPref.edit()) {
             putInt(getString(R.string.STR), strength)
             apply()
         }
@@ -62,7 +63,8 @@ class MainActivity() : AppCompatActivity() {
     public fun saveDex(view: View) {
         var dexterity = Integer.parseInt(editText.text.toString())
         // this should be getPreferences
-        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with(sharedPref.edit()) {
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE);
+        with(sharedPref.edit()) {
             putInt(getString(R.string.DEX), dexterity)
             apply()
         }
@@ -71,7 +73,8 @@ class MainActivity() : AppCompatActivity() {
     public fun saveInt(view: View) {
         var intelligance = Integer.parseInt(editText4.text.toString())
         // this should be getPreferences
-        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with(sharedPref.edit()) {
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE);
+        with(sharedPref.edit()) {
             putInt(getString(R.string.INT), intelligance)
             apply()
         }
@@ -80,7 +83,8 @@ class MainActivity() : AppCompatActivity() {
     public fun saveWis(view: View) {
         var wisdom = Integer.parseInt(editText3.text.toString())
         // this should be getPreferences
-        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with(sharedPref.edit()) {
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE);
+        with(sharedPref.edit()) {
             putInt(getString(R.string.WIS), wisdom)
             apply()
         }
@@ -90,7 +94,8 @@ class MainActivity() : AppCompatActivity() {
     public fun saveCha(view: View) {
         var charisma = Integer.parseInt(editText5.text.toString())
         // this should be getPreferences
-        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with(sharedPref.edit()) {
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE);
+        with(sharedPref.edit()) {
             putInt(getString(R.string.CHA), charisma)
             apply()
         }
@@ -100,7 +105,8 @@ class MainActivity() : AppCompatActivity() {
     public fun saveCon(view: View) {
         var constitution = Integer.parseInt(editText6.text.toString())
         // this should be getPreferences
-        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with(sharedPref.edit()) {
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE);
+        with(sharedPref.edit()) {
             putInt(getString(R.string.CON), constitution)
             apply()
         }
@@ -109,7 +115,8 @@ class MainActivity() : AppCompatActivity() {
     public fun saveChr(view: View) {
         var chrname = editText7.text.toString()
         // this should be getPreferences
-        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with(sharedPref.edit()) {
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE);
+        with(sharedPref.edit()) {
             putString(getString(R.string.CHR), chrname)
             apply()
         }
