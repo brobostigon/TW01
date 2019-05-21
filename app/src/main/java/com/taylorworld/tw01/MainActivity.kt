@@ -18,10 +18,10 @@ class MainActivity() : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         //setSupportActionBar(findViewById(R.id.my_toolbar))
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+        //       fab.setOnClickListener { view ->
+        //          Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+        //            .setAction("Action", null).show()
+        //  }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -40,37 +40,82 @@ class MainActivity() : AppCompatActivity() {
         }
     }
 
-        var strength = Integer.parseInt(editText2.text.toString())
-        var dexterity = Integer.parseInt(editText.text.toString())
-        var intelligance = Integer.parseInt(editText4.text.toString())
-        var wisdom = Integer.parseInt(editText3.text.toString())
-        var constitution = Integer.parseInt(editText6.text.toString())
-        var charisma = Integer.parseInt(editText5.text.toString())
-        var chrname = editText7.text.toString()
+    //var strength = Integer.parseInt(editText2.text.toString())
+    //var dexterity = Integer.parseInt(editText.text.toString())
+    //var intelligance = Integer.parseInt(editText4.text.toString())
+    //var wisdom = Integer.parseInt(editText3.text.toString())
+    //var constitution = Integer.parseInt(editText6.text.toString())
+    //var charisma = Integer.parseInt(editText5.text.toString())
+    //var chrname = editText7.text.toString()
 
     val sharedPref = this?.getPreferences(Context.MODE_PRIVATE)
 
     public fun saveStr(view: View) {
-
+        var strength = Integer.parseInt(editText2.text.toString())
         // this should be getPreferences
-        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with (sharedPref.edit()) {
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with(sharedPref.edit()) {
             putInt(getString(R.string.STR), strength)
             apply()
         }
     }
-    public fun saveDex(view: View) {
 
+    public fun saveDex(view: View) {
+        var dexterity = Integer.parseInt(editText.text.toString())
         // this should be getPreferences
-        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with (sharedPref.edit()) {
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with(sharedPref.edit()) {
             putInt(getString(R.string.DEX), dexterity)
             apply()
         }
     }
 
-        public fun readStr(view: View) {
-
+    public fun saveInt(view: View) {
+        var intelligance = Integer.parseInt(editText4.text.toString())
+        // this should be getPreferences
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with(sharedPref.edit()) {
+            putInt(getString(R.string.INT), intelligance)
+            apply()
         }
     }
+
+    public fun saveWis(view: View) {
+        var wisdom = Integer.parseInt(editText3.text.toString())
+        // this should be getPreferences
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with(sharedPref.edit()) {
+            putInt(getString(R.string.WIS), wisdom)
+            apply()
+        }
+
+    }
+
+    public fun saveCha(view: View) {
+        var charisma = Integer.parseInt(editText5.text.toString())
+        // this should be getPreferences
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with(sharedPref.edit()) {
+            putInt(getString(R.string.CHA), charisma)
+            apply()
+        }
+
+    }
+
+    public fun saveCon(view: View) {
+        var constitution = Integer.parseInt(editText6.text.toString())
+        // this should be getPreferences
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with(sharedPref.edit()) {
+            putInt(getString(R.string.CON), constitution)
+            apply()
+        }
+
+    }
+    public fun saveChr(view: View) {
+        var chrname = editText7.text.toString()
+        // this should be getPreferences
+        val sharedPref = this?.getPreferences(Context.MODE_PRIVATE) ?: return with(sharedPref.edit()) {
+            putString(getString(R.string.CHR), chrname)
+            apply()
+        }
+    }
+
+}
 
 
 

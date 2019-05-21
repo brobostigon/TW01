@@ -10,4 +10,9 @@
     <string name="chr_name">Charecter Name</string>
     <string name="STR">STR</string>
     <string name="DEX">DEx</string>
+    <string name="INT">INT</string>
+    <string name="WIS">WIS</string>
+    <string name="CHA">CHA</string>
+    <string name="CON">CON</string>
+    <string name="CHR">CHR</string>
 </resources>
